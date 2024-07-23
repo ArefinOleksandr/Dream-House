@@ -1,0 +1,52 @@
+
+
+.slideFromTop{
+    z-index: 100;
+    animation: slideFromTop 700ms ease-in-out;
+}
+.slideFromBottom{
+    z-index: 100;
+    animation: slideFromBottom 700ms ease-in-out;
+}
+.slideToBottom{
+    z-index: 10;
+    animation: slideToBottom 700ms ease-in-out;
+}
+.slideToTop{
+    z-index: 10;
+    animation: slideToTop 700ms ease-in-out;
+}
+
+@keyframes slideFromTop {
+    from{
+        transform: translateY(-100vh);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+@keyframes slideFromBottom {
+    from{
+        transform: translateY(100vh);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideToTop {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-100vh);
+    }
+}
+@keyframes slideToBottom {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(100vh);
+    }
+}

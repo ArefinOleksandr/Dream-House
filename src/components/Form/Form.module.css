@@ -1,0 +1,81 @@
+
+
+.form{
+    position: absolute;
+    z-index: 150;
+    right: 0;
+    bottom: 0;
+    width: 38.541vw;
+    height: 35.185vh;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 6.25vw;
+    display: flex;
+    flex-direction: column;
+    animation: form-animation 1s ease-in-out;
+    overflow: hidden;
+    justify-content: center;
+    gap: 4.074vh
+}
+
+.form > input {
+    border: 0;
+    border-bottom: 1px solid #00000026;
+    padding: 1.562vw 0;
+}
+
+.form > button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    border: 0;
+    text-transform: uppercase;
+    color: #FFAC30;
+    font-weight: 600;
+    font-size: 1.041vw;
+    letter-spacing: .45em;
+    margin-top: 1vw;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.arrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .4vw;
+    max-width: 25%;
+}
+.line{
+    width: 0;
+    height: 1px;
+    background-color: #FFAC30;
+    transition: all .3s ease;
+}
+.arrow > img {
+    opacity: 0;
+    width: .8333vw;
+    transition: all .1s ease;
+}
+.form:hover > button{
+    gap: .5vw;
+}
+
+.form:hover .line{
+    width: 5.99vw;
+}
+.form:hover  .arrow>img{
+    display: block;
+    opacity: 1;
+}
+
+@keyframes form-animation {
+    from {
+        right: -39vw
+    }
+    to{
+        right: 0;
+    }
+}
+

@@ -1,0 +1,45 @@
+
+.stepbar{
+    position: absolute;
+    z-index: 150;
+    right: 5.99vw;
+    top: 25.092vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.7778vh
+}
+
+.active_point{
+    
+    background-color: #ffac30 !important;
+}
+.active_point_border{
+    
+    border-radius: 50%;
+    border: 1px solid #ffffff30
+}
+.point{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #ffffff30;
+    transition: all .3s ease-in-out;
+}
+.point_border:hover .point{
+    background-color: #ffffff70;
+}
+.point_border{
+    cursor: pointer;
+    padding: .4vw;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+}
+
+.cardItem{
+    width:fit-content;
+    padding: .5vw 1vw;
+    background-color: #ffffff30;
+    color: #fff;
+    border-radius: 5%;
+}

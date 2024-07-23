@@ -1,0 +1,71 @@
+
+
+
+.main_screen_about_us{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    transition: all 1.5s ease-in-out;
+    background-image: url('../../img/backgrounds/AboutUsBg.png');
+    background-size: 100vw 100vh;
+}
+.main_screen_about_us::after{
+    z-index: 50;
+    position: absolute;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.45);
+
+}
+
+.main_screen_about_us > h2{
+    position: absolute;
+    margin: 0 auto;
+    width: 100vw;
+    text-align: center;
+    top: 21.204vh;
+    z-index: 100;
+    color: #fff;
+    font-size: 1.041vw;
+    font-weight: 700;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+}
+.info_blocks{
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 100;
+    top: 31.574vh;  
+}
+.info_blocks > div{
+    width: 27.135vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.info_blocks > div > h1{
+    font-size: 3.333vw;
+}
+.info_blocks > div > span{
+    font-size: 1.563vw;
+    text-transform: uppercase;
+}
+.info_blocks > div:nth-child(2){
+    border: 1px solid;
+    border-image-slice: 1;
+    border-width: 1px;
+    border-top: 0;
+    border-bottom: 0;
+    border-image-source: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+}
+.info_blocks > div > h1, .info_blocks > div > span{
+    color: #fff;
+}
+.button_about_us{
+    position: absolute;
+}

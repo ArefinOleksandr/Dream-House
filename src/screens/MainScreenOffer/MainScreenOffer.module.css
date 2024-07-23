@@ -1,0 +1,41 @@
+
+.main_screen_offer{
+    background-color: lightblue;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    transition: all .5s ease-in-out;
+    background-image: url('../../img/backgrounds/FirstScreenBg.png');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+.main_screen_offer::after{
+    z-index: 50;
+    position: absolute;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.45);
+
+}
+
+.logo{
+    width: 35.773vw;
+    height: 35.507vh;
+    z-index: 70;
+    position: absolute;
+    left: 15.85vw;
+    top: 24.7222vh
+}
+
+@keyframes bg-animation {
+    from{
+        background-size: 110vw 110vh;
+    }
+    to{
+        background-size: 100vw 100vh;
+    }
+}

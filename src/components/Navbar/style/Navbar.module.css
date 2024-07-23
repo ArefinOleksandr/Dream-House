@@ -1,0 +1,129 @@
+
+
+.navbar{
+    position: absolute;
+    z-index: 150;
+    margin: 0 auto;
+    width: 100vw;
+    height: 9.259vh;
+    
+}
+.navbar_animate{
+    animation: slide-nav-animation .4s ease-in-out;
+}
+.navbar_not_animate{
+    transform: translateY(-101%);
+}
+.navbar > div {
+    margin: 0 auto;
+    width: 81.458vw;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+.navbar > div > div > button {
+    margin-right: 6.615vw;
+}
+.navbar > div > div > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.underline{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.underline:after{
+    content: '';
+    height: 1px;
+    background: rgb(214,214,214);
+    background: linear-gradient(90deg, rgba(214,214,214,0) 0%, rgba(214,214,214,0.7483368347338936) 25%, rgba(214,214,214,1) 50%, rgba(214,214,214,0.7539390756302521) 75%, rgba(255,255,255,0) 100%);
+    width: 0;
+    transition: all .3s ease-in;
+}
+
+.underline:hover::after{
+    width: 100%;
+}
+
+.navbar button {
+    background-color: transparent;
+    border: 0;
+
+}
+
+.menuIcon{
+    padding: 1vw;
+    border-radius: 50%;
+    transition: all .3s ease-in;
+    cursor: pointer;
+}
+
+.menuIcon:hover{
+    background-color: #4e4e4e50;
+}
+
+.callButton{
+    margin-right: 0;
+    text-transform: uppercase;
+    color: rgba(255, 172, 48, 1);
+    display: flex;
+    flex-direction: row;
+    gap: 2.448vw;
+    align-items: center;
+    cursor: pointer;
+}
+.callButton > div{
+    padding: 1.4vw;
+    border-radius: 50%;
+    background-color: #4e4e4e50;
+    position: relative;
+} 
+
+.callButton > div:after,
+.callButton > div:before{
+    content: '';
+    position: absolute;
+    top: -25%;
+    left: -27%;
+    width: 150%;
+    height: 150%;
+    border: 1px solid #e4e4e450;
+    border-radius: 50%;
+    animation: pulse 4s ease-out infinite;
+}
+.callButton > div:before{
+    animation-delay: 2s;
+}
+.callButton > span{
+     gap: .3vw;
+}
+.callButton > span:after{
+    background: rgb(255,255,255)!important;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,172,48,1) 50%, rgba(255,255,255,0) 100%)!important;
+}
+
+@keyframes pulse {
+    from{
+        opacity: 1;
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-nav-animation {
+    from{
+        transform: translateY(-101%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
