@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Dream-House/static/css/main.93c1c4f7.css",
+    "main.js": "/Dream-House/static/js/main.a879fe92.js",
+    "static/js/453.ddcfdada.chunk.js": "/Dream-House/static/js/453.ddcfdada.chunk.js",
+    "static/media/FirstScreenBg.png": "/Dream-House/static/media/FirstScreenBg.e648c786a1c5eda61bc6.png",
+    "static/media/AboutUsBg.png": "/Dream-House/static/media/AboutUsBg.52d557d03ab04a1071ea.png",
+    "static/media/smallLogo.svg": "/Dream-House/static/media/smallLogo.9b9ab577e9a414afe5ff735a241b8e96.svg",
+    "static/media/slogan.svg": "/Dream-House/static/media/slogan.599be30334680a63138ef996c4161020.svg",
+    "static/media/callIcon.svg": "/Dream-House/static/media/callIcon.3a522a57d84b7e5a7a51f9d4e4a4f4e7.svg",
+    "index.html": "/Dream-House/index.html",
+    "main.93c1c4f7.css.map": "/Dream-House/static/css/main.93c1c4f7.css.map",
+    "main.a879fe92.js.map": "/Dream-House/static/js/main.a879fe92.js.map",
+    "453.ddcfdada.chunk.js.map": "/Dream-House/static/js/453.ddcfdada.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93c1c4f7.css",
+    "static/js/main.a879fe92.js"
+  ]
+}
