@@ -1,0 +1,132 @@
+
+.main_screen_calculator{
+    background-color: lightblue;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    transition: all .5s ease-in-out;
+    background-image: url('../../img/backgrounds/MainScreenCalculatorBg.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+.main_screen_calculator::after{
+    z-index: 50;
+    position: absolute;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+
+}
+
+
+.circular_range_container {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;/* Измените фон на темный */
+    border-radius: 50%;
+    z-index: 100;
+  }
+  .circular_range_container > svg{
+    z-index: 50;
+  }
+  
+  .circular_range_indicator {
+    position: absolute;
+    z-index: 150;
+    font-size: 3rem;
+    color: white; /* Измените цвет текста на белый */
+    pointer-events: none;
+    background-color: transparent;
+    border: 0;
+    width: 100px;
+    text-align: center;
+  }
+
+  .container_calculate{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  .container_calculate > div{
+    display: flex;
+    align-items: center;
+  }
+
+
+
+
+
+
+  .stageLine{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .stageLine h2 {
+    color: #fff;
+    font-size: 1.25vw;
+    text-transform: uppercase;
+    transition: all .2s ease;
+  }
+  .stageLine h2:hover{
+    transform: scale(1.1);
+  }
+
+
+  .calculate_sum{
+    margin-bottom: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+    font-size: 1.25vw;
+    perspective: 2000px;
+  perspective-origin: 50% 50%;
+  }
+  .calculate_sum > span{
+    font-size: 3.333vw;
+  }
+  .calculate_sum_thousands{
+
+  }
+  .calculate_sum_hundreds{
+
+  }
+  
+  .transform_out{
+    animation: transform_out .5s ease-in-out;
+  }
+  .transform_in{
+    animation: transform_in .5s ease-in-out;
+  }
+
+
+
+  @keyframes transform_out {
+    from{
+      transform: rotateX(0);
+    }
+    to{
+      transform: rotateX(90deg);
+    }
+  }
+  @keyframes transform_in {
+    from{
+      transform: rotateX(90deg);
+    }
+    to{
+      transform: rotateX(0);
+    }
+  }

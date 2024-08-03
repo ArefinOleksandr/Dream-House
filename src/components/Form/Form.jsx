@@ -2,7 +2,7 @@ import { useState } from "react"
 import style from './Form.module.css';
 import arrowIcon from '../../img/icons/Arrow.png'
 
-export default function Form(){
+export default function Form({isVisible}){
     const [userPhone, setUserPhone] = useState(null)
     const [userName, setUserName] = useState(null)
 
@@ -14,7 +14,7 @@ export default function Form(){
     }
 
     return (
-        <form className={style.form} action="">
+        <form style={isVisible ? {} : {display: 'none'}} className={style.form} action="">
             <input 
             className="uk-input" 
             type="text" 

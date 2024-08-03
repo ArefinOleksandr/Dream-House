@@ -1,107 +1,107 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import MainScreenOffer from './screens/MainScreenOffer/MainScreenOffer';
 import MainScreenAboutUs from './screens/MainScreenAboutUs/MainScreenAboutUs';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import Form from './components/Form/Form';
 import Stepbar from './components/Stepsbar/Stepbar';
+import MainScreenServices from './screens/MainScreenServices/MainScreenServices';
+import MainScreenCalculator from './screens/MainScreenCalculator/MainScreenCalculator';
 
-
-const Router = [
+let Router = [
   {
-    routeId : 1,
-    screen : MainScreenOffer,
-    name: 'Главная страница'
+    routeId: 1,
+    screen: MainScreenOffer,
+    name: 'Главная страница',
+    isAnimated: false
   },
   {
-    routeId : 2,
-    screen : MainScreenAboutUs,
-    name : 'О нас'
+    routeId: 2,
+    screen: MainScreenAboutUs,
+    name: 'О нас',
+    isAnimated: false
+  },
+  {
+    routeId: 3,
+    screen: MainScreenServices,
+    name: 'Услуги',
+    isAnimated: false
+  },
+  {
+    routeId: 4,
+    screen: MainScreenCalculator,
+    name: 'Цены',
+    isAnimated: false
   },
 ]
 
 const App = () => {
   const [currentScreen, setCurrentScreen] = useState(1)
-  const [scrollToTop, setScrollToTop] = useState(false)
-  const [scrollToBottom, setScrollToBottom] = useState(false)
-  const [countScreens] = useState(Router.map((router) => router.routeId < 10 ? router : null))
+  const [targetScreen, setTargetScreen] = useState(null)
+  const [scrollDirection, setScrollDirection] = useState(null)
 
-  const handleWheel = (event, customScroll, customScreen) => {
-    let delta = null
-    if(event){
-      delta = event.deltaY
-    }
-
-    if(
-      ((customScreen && customScroll) && customScreen > currentScreen) ||
-      (delta > 0 && currentScreen < countScreens.length && (!scrollToBottom || !scrollToTop)
-    )){
-      setScrollToBottom(true);
-
-      setTimeout(() => {
-        if(event){
-          setCurrentScreen(currentScreen + 1 )
-        }
-        else if(customScreen, customScroll){
-          setCurrentScreen(customScreen)
-        }
-        setScrollToBottom(false)
-      }, 700)
-
-    }
-    
-    else if(
-      ((customScreen && customScroll) && customScreen < currentScreen) ||
-      (delta < 0 && currentScreen > 1 && (!scrollToBottom || !scrollToTop))
-    ){
-      setScrollToTop(true)
-      setTimeout(() => {
-        if(event){
-          setCurrentScreen(currentScreen - 1 )
-        }
-        else if(customScreen, customScroll){
-          setCurrentScreen(customScreen)
-        }
-        setScrollToTop(false)
-      }, 700)
+  const handleWheel = (event) => {
+    let delta = event.deltaY;
+    if (delta > 0 && currentScreen < Router.length) {
+      handleChangeScreen(currentScreen + 1, 'DOWN');
+    } else if (delta < 0 && currentScreen > 1) {
+      handleChangeScreen(currentScreen - 1, 'UP');
     }
   }
 
-  useEffect(() => {
+  const handleChangeScreen = (target, direction) => {
+    setTargetScreen(target);
+    setScrollDirection(direction);
+    setTimeout(() => {
+      setCurrentScreen(target);
+      setTargetScreen(null);
+      setScrollDirection(null);
+    }, 700);
+  }
 
-    document.addEventListener('wheel', handleWheel)
+  useEffect(() => {
+    document.addEventListener('wheel', handleWheel);
     return () => {
       document.removeEventListener('wheel', handleWheel);
     };
   }, [currentScreen])
-  
+
+  useEffect(() => {
+    Router.map((route) => {
+      if (route.routeId === currentScreen) {
+        route.isAnimated = true;
+      }
+    })
+  }, [currentScreen])
+
   const CurrentScreenComponent = Router.find(route => route.routeId === currentScreen)?.screen;
-  const NextScreenComponent = Router.find(route => route.routeId === currentScreen + 1)?.screen;
-  const PrevScreenComponent = Router.find(route => route.routeId === currentScreen - 1)?.screen;
+  const TargetScreenComponent = Router.find(route => route.routeId === targetScreen)?.screen;
 
   const handleScrollByStepbar = (customScreen) => {
-    handleWheel(null, true, customScreen)
+    if (customScreen > currentScreen) {
+      handleChangeScreen(customScreen, 'DOWN');
+    } else if (customScreen < currentScreen) {
+      handleChangeScreen(customScreen, 'UP');
+    }
   }
+
   return (
-    <div style={{overflow: 'hidden'}}>
+    <div style={{ overflow: 'hidden' }}>
       <Navbar />
       <Sidebar />
-      <Form />
-      <Stepbar screens = {Router} currentScreenId={currentScreen} scrollToScreen={handleScrollByStepbar}/>
+      <Form isVisible={currentScreen === 3 ? false : true}/>
+      <Stepbar screens={Router} currentScreenId={currentScreen} scrollToScreen={handleScrollByStepbar} />
       {CurrentScreenComponent ? (
         <>
-          {scrollToTop && <PrevScreenComponent typeAnimation = 'PREV_SCREEN' />}
-          <CurrentScreenComponent typeAnimation={scrollToTop ? 'CURRENT_TO_BOTTOM' : scrollToBottom ? 'CURRENT_TO_TOP': ''}/>
-          {scrollToBottom && <NextScreenComponent typeAnimation = 'NEXT_SCREEN'/>}
-          
+          {scrollDirection === 'UP' && TargetScreenComponent && <TargetScreenComponent typeAnimation='PREV_SCREEN' />}
+          <CurrentScreenComponent isAnimated={Router.find(route => route.routeId === currentScreen)?.isAnimated} typeAnimation={scrollDirection === 'UP' ? 'CURRENT_TO_BOTTOM' : scrollDirection === 'DOWN' ? 'CURRENT_TO_TOP' : ''} />
+          {scrollDirection === 'DOWN' && TargetScreenComponent && <TargetScreenComponent typeAnimation='NEXT_SCREEN' />}
         </>
       ) : (
         <div>Screen not found</div>
       )}
     </div>
   );
-  
-
 };
 
 export default App;

@@ -63,9 +63,104 @@
     border-bottom: 0;
     border-image-source: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
 }
-.info_blocks > div > h1, .info_blocks > div > span{
+.info_blocks > div > div > h1, .info_blocks > div > span{
+    color: #fff;
+    margin-bottom: 0;
+}
+.info_blocks span{
     color: #fff;
 }
-.button_about_us{
+.button_overlay{
     position: absolute;
+    bottom: 7.87vh;
+    left: 22.396vw;
+    overflow: hidden;
+    z-index: 100;
 }
+.button_about_us{
+    color: #fff;
+    border: 0;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: .729vw;
+    letter-spacing: .45rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .7vw;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.arrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .4vw;
+    max-width: 25%;
+}
+.line{
+    width: 4.948vw;
+    height: 1px;
+    background-color: #ffffff50;
+    transition: all .3s ease;
+}
+.arrow > img {
+    opacity: 1;
+    width: .8333vw;
+}
+
+.overlay_animation{
+    overflow: hidden;
+}
+.text_none_animated{
+    opacity: 0;
+}
+.numbers_animation{
+    animation: numbers_animation .4s ease-in-out;
+}
+.text_animation{
+    animation: text_animation .5s ease-in-out;
+}
+.button_none_animated{
+    position: absolute;
+    bottom: 7.87vh;
+    left: 22.396vw;
+    overflow: hidden;
+    z-index: 100;
+    width: 0
+}
+.button_animation{
+    position: absolute;
+    bottom: 7.87vh;
+    left: 22.396vw;
+    overflow: hidden;
+    z-index: 100;
+    animation: button_animation 1.5s ease-in-out;
+}
+
+@keyframes numbers_animation {
+    from{
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+@keyframes text_animation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes button_animation {
+    from{
+        width: 0;
+    }
+    to{
+        width: 22.917vw
+    }
+}
+

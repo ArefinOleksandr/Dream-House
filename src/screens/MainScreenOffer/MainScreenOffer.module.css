@@ -31,6 +31,9 @@
     top: 24.7222vh
 }
 
+.bg_animation{
+    animation: bg-animation .6s ease-in-out;
+}
 @keyframes bg-animation {
     from{
         background-size: 110vw 110vh;

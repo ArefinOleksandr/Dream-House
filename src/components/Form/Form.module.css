@@ -50,7 +50,7 @@
 .line{
     width: 0;
     height: 1px;
-    background-color: #FFAC30;
+    background-color: rgba(255, 172, 48, .7);
     transition: all .3s ease;
 }
 .arrow > img {
