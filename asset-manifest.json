@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Dream-House/static/css/main.abb4cfb8.css",
-    "main.js": "/Dream-House/static/js/main.0b42e84d.js",
+    "main.css": "/Dream-House/static/css/main.fa2a664f.css",
+    "main.js": "/Dream-House/static/js/main.9106ee9f.js",
     "static/js/453.ddcfdada.chunk.js": "/Dream-House/static/js/453.ddcfdada.chunk.js",
     "static/media/FirstScreenBg.png": "/Dream-House/static/media/FirstScreenBg.e648c786a1c5eda61bc6.png",
     "static/media/MainScreenCalculatorBg.jpeg": "/Dream-House/static/media/MainScreenCalculatorBg.de0b05f500b1b49132b2.jpeg",
@@ -9,16 +9,16 @@
     "static/media/ExtraBg.jpeg": "/Dream-House/static/media/ExtraBg.f13d5be8475287b496e0.jpeg",
     "static/media/EliteBg.jpeg": "/Dream-House/static/media/EliteBg.1584fa3988ec94b5d226.jpeg",
     "static/media/VipBg.jpeg": "/Dream-House/static/media/VipBg.fb7c2ff1d50f3fa46865.jpeg",
-    "static/media/smallLogo.svg": "/Dream-House/static/media/smallLogo.9b9ab577e9a414afe5ff735a241b8e96.svg",
-    "static/media/slogan.svg": "/Dream-House/static/media/slogan.599be30334680a63138ef996c4161020.svg",
-    "static/media/callIcon.svg": "/Dream-House/static/media/callIcon.3a522a57d84b7e5a7a51f9d4e4a4f4e7.svg",
+    "static/media/smallLogo.svg": "/Dream-House/static/media/smallLogo.13646d4756d52755ccada9904dc2793f.svg",
+    "static/media/slogan.svg": "/Dream-House/static/media/slogan.1a348e03e8d785443e6275492c1f0c61.svg",
+    "static/media/callIcon.svg": "/Dream-House/static/media/callIcon.a5dfdac95e2a0105e16814a59531e9bf.svg",
     "index.html": "/Dream-House/index.html",
-    "main.abb4cfb8.css.map": "/Dream-House/static/css/main.abb4cfb8.css.map",
-    "main.0b42e84d.js.map": "/Dream-House/static/js/main.0b42e84d.js.map",
+    "main.fa2a664f.css.map": "/Dream-House/static/css/main.fa2a664f.css.map",
+    "main.9106ee9f.js.map": "/Dream-House/static/js/main.9106ee9f.js.map",
     "453.ddcfdada.chunk.js.map": "/Dream-House/static/js/453.ddcfdada.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.abb4cfb8.css",
-    "static/js/main.0b42e84d.js"
+    "static/css/main.fa2a664f.css",
+    "static/js/main.9106ee9f.js"
   ]
 }
